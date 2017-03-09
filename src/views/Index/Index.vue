@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>{{ message }}</h2>
-    <h3>{{ author }}</h3>
+    <h3>By {{ author }}</h3>
   </div>
 </template>
 
