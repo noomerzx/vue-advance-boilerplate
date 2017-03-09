@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setMessage: '/Message/setMessage',
+      setMessage: 'Message/setMessage',
       setName: 'Person/setName'
     })
   }

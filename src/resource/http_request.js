@@ -1,9 +1,8 @@
 import axios from 'axios'
 
 let axiosInstance = axios.create({
-  baseURL: '',
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
+  baseURL: 'http://192.168.1.193:3000/api/',
+  timeout: 1000
 })
 
 // Add a request interceptor
@@ -27,10 +26,13 @@ axiosInstance.interceptors.response.use(function (response) {
 class HttpRequest {
   constructor (url) {
     this.serviceUrl = url
-    // axiosInstance.defaults.headers = {}
   }
 
-  retrieve (data) {
+  setHeader (header) {
+    axiosInstance.defaults.headers = header
+  }
+
+  fetch (data) {
     return axiosInstance.get(this.serviceUrl, {
       params: data
     })
@@ -46,6 +48,18 @@ class HttpRequest {
 
   delete (id) {
     return axiosInstance.delete(this.serviceUrl + '/' + id)
+  }
+
+  request (type, url, data) {
+    let promise = null
+    switch (type) {
+      case 'GET': promise = axios.get(url, { params: data }); break
+      case 'POST': promise = axios.post(url, data); break
+      case 'PUT': promise = axios.put(url, data); break
+      case 'DELETE': promise = axios.delete(url, data); break
+      default : promise = axios.get(url, { params: data }); break
+    }
+    return promise
   }
 }
 
