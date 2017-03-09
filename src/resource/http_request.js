@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let axiosInstance = axios.create({
-  baseURL: 'http://192.168.1.193:3000/api/',
+  baseURL: 'http://www.xxx.com/api/',
   timeout: 1000
 })
 
