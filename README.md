@@ -2,7 +2,7 @@
 ============
 > A boilerplate for Vue.js for Advance or Large Scale Project.
 <br>
-> State management with seperating modules.
+> State management with seperating as modules.
 <br>
 > Create API Resource with axios
 
