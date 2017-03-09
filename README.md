@@ -1,15 +1,17 @@
 # Vue Advance Boilerplate
 ============
 > A boilerplate for Vue.js for Advance or Large Scale Project.
+<br>
 > State management with seperating modules.
-> Create API Resource with vue-resource
+<br>
+> Create API Resource with axios
 
 ----------------------------------------
 ## Dependencies
 * Vue
 * Vue-Router
-* Vue-Resource
 * Vuex
+* Axios
 * Webpack
 
 ----------------------------------------
