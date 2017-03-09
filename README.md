@@ -14,7 +14,7 @@
 
 ----------------------------------------
 ## Project Structure
-* components: contain shared components (.vue)
+* <b>components</b>: contain shared components (.vue)
 * resource: contain services for api request
 * router: router file config here
 * store: state mangement with vuex seperating as modules
