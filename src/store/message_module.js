@@ -1,6 +1,9 @@
-const example_module {
+// import { MessageService } from '../resource'
+
+const messageModule = {
+  namespaced: true,
   state: {
-    message: 'Vue.js Starter Boilerplate'
+    message: 'Vue.js Advance Boilerplate'
   },
   mutations: {
     SET_MESSAGE (state, message) {
@@ -19,4 +22,4 @@ const example_module {
   }
 }
 
-export default example_module
+export default messageModule

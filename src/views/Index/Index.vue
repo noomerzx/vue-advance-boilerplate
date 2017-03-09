@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>{{ message }}</h2>
-    <h2>{{ author }}</h2>
+    <h3>{{ author }}</h3>
   </div>
 </template>
 
@@ -18,12 +18,14 @@ export default {
   },
   computed: {
     ...mapGetters({
-      message: 'getMessage'
+      message: 'Message/getMessage',
+      author: 'Person/getName'
     })
   },
   methods: {
     ...mapActions({
-      setMessage: 'setMessage'
+      setMessage: '/Message/setMessage',
+      setName: 'Person/setName'
     })
   }
 }

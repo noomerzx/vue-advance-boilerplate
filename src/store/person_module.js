@@ -1,4 +1,7 @@
-const person_module {
+// import { PersonService } from '../resource'
+
+const personModule = {
+  namespaced: true,
   state: {
     name: 'Wisarut Phuvanantanond'
   },
@@ -19,4 +22,4 @@ const person_module {
   }
 }
 
-export default person_module
+export default personModule

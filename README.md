@@ -4,6 +4,7 @@
 > State management with seperating modules.
 > Create API Resource with vue-resource
 
+----------------------------------------
 ## Dependencies
 * Vue
 * Vue-Router
@@ -11,6 +12,16 @@
 * Vuex
 * Webpack
 
+----------------------------------------
+## Project Structure
+* components: contain shared components (.vue)
+* resource: contain services for api request
+* router: router file config here
+* store: state mangement with vuex seperating as modules
+* utils: javascript utility file, for example vue filter
+* views: container root components for each page (.vue)
+
+----------------------------------------
 ## Build Setup
 
 ``` bash
