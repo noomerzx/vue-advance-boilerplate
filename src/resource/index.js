@@ -1,4 +1,6 @@
-import HttpRequest from './http_request'
+import PersonProvider from './person_provider'
+import MessageProvider from './message_provider'
 
-export const PersonService = new HttpRequest('person')
-export const MessageService = new HttpRequest('message')
+// Give arg to provider to start endpoint with specific path for example = xxx.com/api/person
+export const PersonService = new PersonProvider('person')
+export const MessageService = new MessageProvider('message')

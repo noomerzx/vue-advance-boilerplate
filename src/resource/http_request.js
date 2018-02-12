@@ -1,11 +1,10 @@
 import axios from 'axios'
 
 let axiosInstance = axios.create({
-  baseURL: 'http://www.xxx.com/api/',
-  timeout: 1000
+  baseURL: 'www.xxx.com/api',
+  timeout: 120000
 })
 
-// Add a request interceptor
 axiosInstance.interceptors.request.use(function (config) {
   // Do something before request is sent
   return config
@@ -24,30 +23,31 @@ axiosInstance.interceptors.response.use(function (response) {
 })
 
 class HttpRequest {
-  constructor (url) {
-    this.serviceUrl = url
+  constructor () {
+    this.axios = axios
   }
 
   setHeader (header) {
-    axiosInstance.defaults.headers = header
+    axiosInstance.defaults.headers.common[header.key] = header.value
+    axiosInstance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
   }
 
-  fetch (data) {
-    return axiosInstance.get(this.serviceUrl, {
+  fetch (methodName, data) {
+    return axiosInstance.get(methodName, {
       params: data
     })
   }
 
-  create (data) {
-    return axiosInstance.post(this.serviceUrl, data)
+  create (methodName, data) {
+    return axiosInstance.post(methodName, data)
   }
 
-  update (id, data) {
-    return axiosInstance.put(this.serviceUrl + '/' + id, data)
+  update (methodName, data) {
+    return axiosInstance.put(methodName, data)
   }
 
-  delete (id) {
-    return axiosInstance.delete(this.serviceUrl + '/' + id)
+  delete (methodName, id) {
+    return axiosInstance.delete(methodName, { params: {id: id} })
   }
 
   request (type, url, data) {

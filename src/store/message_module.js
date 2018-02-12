@@ -1,4 +1,4 @@
-// import { MessageService } from '../resource'
+import { MessageService } from '../resource'
 
 const messageModule = {
   namespaced: true,
@@ -13,6 +13,9 @@ const messageModule = {
   actions: {
     setMessage ({ commit, state }, message) {
       commit('SET_MESSAGE', message)
+    },
+    sendMessage ({ commit, state }, message) {
+      MessageService.sendMessage(message)
     }
   },
   getters: {
